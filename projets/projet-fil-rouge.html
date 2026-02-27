@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Fil Rouge – Analyse Morpho-Évolutive Humaine | ENDAYE Aimé</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/projet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap">
+</head>
+<body>
+  <header>
+    <nav role="navigation" aria-label="Menu principal">
+      <div class="logo"><a href="../index.html">ENDAYE Aimé</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html#projets">Projets</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main" class="project-page">
+    <h1>Projet Fil Rouge – Analyse Morpho-Évolutive Humaine</h1>
+
+    <section class="project-details">
+      <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+      <p>Projet d'analyse et de visualisation de données paléoanthropologiques sur l'évolution humaine. Étude complète de la capacité crânienne et des traits morphologiques à travers le temps, avec analyses statistiques, visualisations avancées et synthèse scientifique.</p>
+      <ul>
+        <li><strong>Exploration complète</strong> : Nettoyage, structuration et analyse du dataset</li>
+        <li><strong>Visualisations multiples</strong> : Boxplots, heatmaps, courbes temporelles</li>
+        <li><strong>Corrélations & synthèse</strong> : Analyses statistiques, rapport scientifique</li>
+        <li><strong>Gestion agile</strong> : Application de la méthode SCRUM</li>
+      </ul>
+    </section>
+
+    <section class="tech-stack">
+      <h3><i class="fas fa-tools"></i> Technologies utilisées</h3>
+      <ul>
+        <li><strong>Python</strong> : Langage principal</li>
+        <li><strong>Pandas</strong> : Manipulation des données</li>
+        <li><strong>Jupyter</strong> : Analyse interactive</li>
+        <li><strong>Seaborn & Matplotlib</strong> : Visualisations</li>
+        <li><strong>Agile</strong> : Gestion de projet SCRUM</li>
+      </ul>
+    </section>
+
+    <section class="project-code">
+      <h2><i class="fas fa-code"></i> Extrait du code</h2>
+      <pre><code class="language-python">
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('data/Evolution_DataSets.csv')
+
+# Exemple : Visualisation de la capacité crânienne par espèce
+plt.figure(figsize=(12, 6))
+sns.boxplot(data=df, x='Genus_&_Specie', y='Cranial_Capacity')
+plt.xticks(rotation=45)
+plt.title('Distribution de la Capacité Crânienne par Espèce')
+plt.tight_layout()
+plt.show()
+      </code></pre>
+    </section>
+
+    <section class="github-link">
+      <a href="https://github.com/ENDAYEaime" target="_blank" class="btn-github">
+        <i class="fab fa-github"></i>
+        Voir le code complet sur GitHub
+      </a>
+      <p class="github-description">
+        Accédez au repository complet pour explorer :
+        <ul>
+          <li>Le notebook Jupyter complet</li>
+          <li>Les visualisations générées</li>
+          <li>Le jeu de données</li>
+          <li>La documentation</li>
+        </ul>
+      </p>
+    </section>
+
+    <section class="flex-sections">
+      <div>
+        <h2><i class="fas fa-chart-bar"></i> Fonctionnalités</h2>
+        <ul>
+          <li><i class="fas fa-chart-pie"></i> Visualisations statistiques et morphologiques</li>
+          <li><i class="fas fa-chart-line"></i> Analyse temporelle et corrélations</li>
+          <li><i class="fas fa-table"></i> Tableaux de synthèse</li>
+          <li><i class="fas fa-lightbulb"></i> Rapport scientifique détaillé</li>
+        </ul>
+      </div>
+      <div>
+        <h2><i class="fas fa-cogs"></i> Points techniques</h2>
+        <ul>
+          <li><i class="fas fa-filter"></i> Nettoyage et structuration des données</li>
+          <li><i class="fas fa-project-diagram"></i> Gestion agile (SCRUM)</li>
+          <li><i class="fas fa-code"></i> Code modulaire et reproductible</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 ENDAYE Aimé – Portfolio Data Science</p>
+  </footer>
+</body>
+</html> 

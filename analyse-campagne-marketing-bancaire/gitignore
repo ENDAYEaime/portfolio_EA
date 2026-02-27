@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# OS
+.DS_Store
+
+# Data (optionnel si dataset lourd)
+# data/*.csv
+# data/*.xlsx

@@ -1,0 +1,20 @@
+service: service:SeattleEnergyService
+
+include:
+  - service.py
+  - schemas.py
+
+models:
+  - seattle_energy_model:latest
+
+python:
+  packages:
+    - bentoml
+    - pandas
+    - numpy
+    - scikit-learn
+    - pydantic
+
+
+
+

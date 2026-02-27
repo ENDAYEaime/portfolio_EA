@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/endayemazina/Desktop/Data_Ingenieur/PROJET_4/donne_marcher.db" readonly="0" foreign_keys="" case_sensitive_like="" temp_store="" wal_autocheckpoint="" synchronous=""/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2185"/><column_width id="4" width="0"/></tab_structure><tab_browse><current_table name="0,0:"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">SELECT 
+    ROUND(SUM(p.prix), 2) AS chiffre_affaires_14_aout
+FROM vente v
+JOIN produit p ON v.ean = p.ean
+WHERE v.date_achat = 45518;</sql><sql name="SQL 2">SELECT 
+    v.customer_id,
+    printf('%.2f', SUM(p.prix)) AS chiffre_affaires
+FROM vente v
+JOIN produit p ON v.ean = p.ean
+GROUP BY v.customer_id
+ORDER BY SUM(p.prix) DESC
+LIMIT 10;</sql><sql name="SQL 4">SELECT
+    e.id_employe,
+    e.nom,
+    e.prenom,
+    printf('%.2f', SUM(p.prix)) AS chiffre_affaires,
+    printf(
+        '%.2f',
+        (SUM(p.prix) * 1.0) /
+        (SELECT SUM(p2.prix)
+         FROM vente v2
+         JOIN produit p2 ON v2.ean = p2.ean)
+    ) AS part_du_total
+FROM vente v
+JOIN produit p ON v.ean = p.ean
+JOIN employe e ON v.id_employe = e.id_employe
+GROUP BY e.id_employe, e.nom, e.prenom
+ORDER BY SUM(p.prix) DESC;</sql><sql name="SQL 5">SELECT COUNT(*) AS total_logs
+FROM logs;</sql><sql name="SQL 6">SELECT action, COUNT(*) AS nombre_occurrences
+FROM logs
+GROUP BY action;</sql><sql name="SQL 7">SELECT DISTINCT l.id_user, e.nom, e.prenom
+FROM logs l
+LEFT JOIN employe e ON l.id_user = e.id_employe;</sql><sql name="SQL 8">SELECT 
+    l.id_user,
+    e.nom,
+    e.prenom,
+    COUNT(*) AS nb_apparitions
+FROM logs l
+LEFT JOIN employe e
+    ON l.id_user = e.id_employe
+GROUP BY l.id_user, e.nom, e.prenom
+ORDER BY nb_apparitions DESC;
+</sql><sql name="SQL 9">SELECT 
+    date,
+    COUNT(*) AS nombre_occurrences
+FROM logs
+GROUP BY date
+ORDER BY date;
+</sql><sql name="SQL 10">SELECT 
+    date,
+    DATE('1899-12-30', '+' || date || ' days') AS date_reelle,
+    COUNT(*) AS nb_occurrences
+FROM logs
+GROUP BY date;
+
+
+</sql><current_tab id="4"/></tab_sql></sqlb_project>

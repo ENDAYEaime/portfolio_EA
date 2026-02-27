@@ -1,0 +1,22 @@
+# Environnements Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Notebooks & data (hors runtime)
+notebooks/
+data/
+
+# Fichiers système
+.DS_Store
+
+# Git
+.git/
+.gitignore
+
+# Cache outils
+.ipynb_checkpoints/
+.poetry-cache/

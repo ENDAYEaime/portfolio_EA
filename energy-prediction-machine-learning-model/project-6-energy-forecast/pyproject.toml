@@ -1,0 +1,28 @@
+
+[project]
+name = "energy-bentoml-api"
+version = "0.1.0"
+
+[tool.poetry]
+description = "API BentoML pour la prédiction de consommation énergétique"
+authors = ["endaye <endayeaime@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+bentoml = "1.1.7"
+scikit-learn = "^1.4"
+pandas = "^2.2"
+numpy = "^1.26"
+joblib = "^1.3"
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0"
+ipykernel = "^6.29"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+
